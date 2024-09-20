@@ -9,8 +9,8 @@ const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(),
     provideServerRoutesConfig([
-      { path: '', renderMode: 2 },
-      { path: 'about', renderMode: 1 },
+      { path: '', renderMode: RenderMode.Client },
+      { path: 'about', renderMode: RenderMode.Server },
       ...extraServerRoutes
     ])
   ]

@@ -5,9 +5,9 @@ import { RenderMode, ServerRoute, } from '@angular/ssr';
 import { lastValueFrom, map } from 'rxjs';
 
 export const todoServerRoutes: ServerRoute[] = [
-  { path: 'todos', renderMode: 3 },
+  { path: 'todos', renderMode: RenderMode.Prerender },
   {
-    path: 'todos/:id', renderMode: 3,
+    path: 'todos/:id', renderMode: RenderMode.Prerender,
     async getPrerenderParams() {
       const http = inject(HttpClient);
       const todos = await lastValueFrom(http.get<any[]>('https://jsonplaceholder.typicode.com/todos')
