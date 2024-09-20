@@ -1,0 +1,9 @@
+<p>Todos</p>
+
+<ul>
+  @for(todo of todos(); track todo.id) {
+    <li>
+      <a [routerLink]="['/todos', todo.id]">{{ todo.title }}</a>
+    </li>
+  }
+</ul>
